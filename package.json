@@ -1,6 +1,6 @@
 {
   "name": "micro-validator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A minimalistic & extensible validation library for javascript",
   "main": "libs/main.js",
   "repository": "https://github.com/manojsinghnegiwd/micro-validator.git",
