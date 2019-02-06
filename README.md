@@ -133,7 +133,7 @@ microValidor doesn't control what options you pass in `validationSchema` because
 Inbuilt validators
 -----------------------
 
-### required
+### 1. required
 Checks if a value is empty or not
 
 ```javascript
@@ -146,7 +146,7 @@ Checks if a value is empty or not
 }
 ```
 
-### length
+### 2. length
 Check the length of given string is falls between min and max ( You can pass min and max in the options )
 
 ```javascript
@@ -161,7 +161,7 @@ Check the length of given string is falls between min and max ( You can pass min
 }
 ```
 
-### email
+### 3. email
 Check if a given string is a valid email or not
 
 ```javascript
@@ -174,7 +174,7 @@ Check if a given string is a valid email or not
 }
 ```
 
-### validUrl
+### 4. validUrl
 Check if a given string is a valid url or not
 
 ```javascript
@@ -187,7 +187,7 @@ Check if a given string is a valid url or not
 }
 ```
 
-### equals
+### 5. equals
 Check if a given value is equals `to` value provided
 
 ```javascript
