@@ -74,7 +74,7 @@ let validationSchema = {
             from: 10,
             to: 20,
             errorMsg: 'Count should be between 10 to 20'
-        } 
+        }
     }
 }
 
@@ -130,12 +130,76 @@ If all of the data validate successfully `validate` method will return an empty 
 ### options
 microValidor doesn't control what options you pass in `validationSchema` because developers can easily role their own custom rules. Only option `errorMsg` is valid. You can `errorMsg` to rules which will be returned if the validation fails for a specific rule.
 
-### Inbuilt validators
+Inbuilt validators
+-----------------------
 
-1. required => checkes if a value is empty or not
-2. length => checked the length of given string is falls betwen min and max ( You can pass min and max in the options )
-3. email => check if a give string is a valid email or not
-4. validUrl => check if a give string is a valid url or not
+### required
+Checks if a value is empty or not
+
+```javascript
+{
+    name: {
+        required: {
+            errorMsg: 'Name is required'
+        }
+    }
+}
+```
+
+### length
+Check the length of given string is falls between min and max ( You can pass min and max in the options )
+
+```javascript
+{
+    password: {
+        length: {
+            min: 8,
+            max: 16,
+            errorMsg: 'Password length should be between 8 and 16'
+        }
+    }
+}
+```
+
+### email
+Check if a given string is a valid email or not
+
+```javascript
+{
+    email: {
+        email: {
+            errorMsg: 'Please enter a valid email'
+        }
+    }
+}
+```
+
+### validUrl
+Check if a given string is a valid url or not
+
+```javascript
+{
+    website: {
+        validUrl: {
+            errorMsg: 'Website should be a valid URL'
+        }
+    }
+}
+```
+
+### equals
+Check if a given value is equals `to` value provided
+
+```javascript
+{
+    confirmPassword: {
+        equals: {
+            to: 'password',
+            errorMsg: 'Confirm password are not same'
+        }
+    }
+}
+```
 
 microValidator focus is to become an extensible validation library for Javascript that is why there is not many inbuilt validator. You can always create your own custom rules and contribute to this project.
 

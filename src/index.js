@@ -2,6 +2,7 @@ import required from './rules/required'
 import checkLength from './rules/checkLength'
 import checkEmail from './rules/checkEmail'
 import checkUrl from './rules/checkUrl'
+import checkEquals from './rules/checkEquals'
 
 class microValidator {
     rules = {}
@@ -61,5 +62,6 @@ validator.addRule('required', required)
 validator.addRule('length', checkLength)
 validator.addRule('email', checkEmail)
 validator.addRule('validUrl', checkUrl)
+validator.addRule('equals', checkEquals)
 
 export default validator
