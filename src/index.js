@@ -3,6 +3,7 @@ import checkLength from './rules/checkLength'
 import checkEmail from './rules/checkEmail'
 import checkUrl from './rules/checkUrl'
 import checkEquals from './rules/checkEquals'
+import checkRegex from './rules/checkRegex'
 
 class microValidator {
     rules = {}
@@ -63,5 +64,6 @@ validator.addRule('length', checkLength)
 validator.addRule('email', checkEmail)
 validator.addRule('validUrl', checkUrl)
 validator.addRule('equals', checkEquals)
+validator.addRule('regex', checkRegex)
 
 export default validator

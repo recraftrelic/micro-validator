@@ -128,9 +128,9 @@ If all of the data validate successfully `validate` method will return an empty 
 }
 ```
 ### options
-microValidor doesn't control what options you pass in `validationSchema` because developers can easily role their own custom rules. Only option `errorMsg` is valid. You can `errorMsg` to rules which will be returned if the validation fails for a specific rule.
+microValidor doesn't control what options you pass in `validationSchema` because developers can easily role their own custom rules. Only option `errorMsg` is valid. You can pass `errorMsg` to rules which will be returned if the validation fails for a specific rule.
 
-Inbuilt validators
+Inbuilt rules
 -----------------------
 
 ### 1. required
@@ -138,24 +138,26 @@ Checks if a value is empty or not
 
 ```javascript
 {
-    name: {
+    // your field name for demo I am using *key*
+    key: {
         required: {
-            errorMsg: 'Name is required'
+            errorMsg: 'key is required'
         }
     }
 }
 ```
 
 ### 2. length
-Check the length of given string is falls between min and max ( You can pass min and max in the options )
+Check if the length of a given string falls between min and max ( You can pass min and max in the options )
 
 ```javascript
 {
-    password: {
+    // your field name for demo I am using *key*
+    key: {
         length: {
             min: 8,
             max: 16,
-            errorMsg: 'Password length should be between 8 and 16'
+            errorMsg: 'key length should be between 8 and 16'
         }
     }
 }
@@ -166,7 +168,8 @@ Check if a given string is a valid email or not
 
 ```javascript
 {
-    email: {
+    // your field name for demo I am using *key*
+    key: {
         email: {
             errorMsg: 'Please enter a valid email'
         }
@@ -179,9 +182,10 @@ Check if a given string is a valid url or not
 
 ```javascript
 {
-    website: {
+    // your field name for demo I am using *key*
+    key: {
         validUrl: {
-            errorMsg: 'Website should be a valid URL'
+            errorMsg: 'key should be a valid URL'
         }
     }
 }
@@ -192,16 +196,32 @@ Check if a given value is equals `to` value provided
 
 ```javascript
 {
-    confirmPassword: {
+    // your field name for demo I am using *key*
+    key: {
         equals: {
-            to: 'password',
-            errorMsg: 'Confirm password are not same'
+            to: 'password', // you can pass anything here for e.g. variables
+            errorMsg: 'key and other value are not same'
         }
     }
 }
 ```
 
-microValidator focus is to become an extensible validation library for Javascript that is why there is not many inbuilt validator. You can always create your own custom rules and contribute to this project.
+### 6. regex
+Check if a given value matches provided `regex`
+
+```javascript
+{
+    // your field name for demo I am using *key*
+    key: {
+        regex: {
+            pattern: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+            errorMsg: 'Please enter a valid Phone Number'
+        }
+    }
+}
+```
+
+microValidator focus is to become an extensible validation library for Javascript that is why there is not many inbuilt rules. You can always create your own custom rules or contribute to this project.
 
 ### About Me
 
