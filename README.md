@@ -11,7 +11,7 @@ $ yarn add micro-validator
 ```javascript
 import microValidator from 'micro-validator' 
 
-const validate (data) {
+const validate = (data) => {
     const errors = microValidator.validate({
         name: {
             required: {
