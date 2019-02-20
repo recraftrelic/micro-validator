@@ -1,6 +1,6 @@
 {
   "name": "micro-validator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A minimalistic & extensible validation library for javascript",
   "main": "libs/main.js",
   "repository": "https://github.com/recraftrelic/micro-validator.git",
